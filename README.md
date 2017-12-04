@@ -1,7 +1,7 @@
 # Blog Entry
 ***by Group E***
 
-#Abstract
+# Abstract
 
 It is widely known that MongoDB can suffer from performance issues when it has to process too much data.
 This often leads to high CPU usage, memory spikes and overall degraded system performace, which leads to a poorer user experience.
