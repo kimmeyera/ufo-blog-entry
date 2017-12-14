@@ -1,12 +1,12 @@
-# MongoDB: "Makes developers at least 2x more productive"..?
+# MongoDB: "Makes developers at least 2x more productive"..?<sup>1</sup>
 
 *by Group E (Alexander, Danny, Kim)*
 
-It is widely known that MongoDB can suffer from performance issues when it has to process too much data. This often leads to high CPU usage, memory spikes, and overall degraded system performance, which leads to a poorer user experience. By analyzing the MongoDB log, modifying Mongo’s indexing and isolating and repairing the whole service, the major MongoDB performance problems can be eliminated. This results in a far more stable and responsive system environment
+It is known that MongoDB can suffer from performance issues when it has to process too much data. This often leads to high CPU usage, memory spikes, and overall degraded system performance, which leads to a poorer user experience. By analyzing the MongoDB log, modifying Mongo’s indexing and isolating and repairing the whole service, the major MongoDB performance problems can be eliminated. This results in a far more stable and responsive system environment
 
 ## If 100% is everything.. Then what is 200%?
 
-Throughout a project that we were building, we decided to use MongoDB as database, since it was json-based, known to be fast, and ease of use. We had used the database on smaller projects and hadn’t experienced any issues at that time. This project was bigger. It was supposed to consume 30.000.000 items through 3 months. That was another reason why we chose MongoDB; it was document-based, it would (supposedly) not consume a lot of disk space, and it should be easy to append a new document to the database without having duplication errors.
+Throughout a project that we were building, we decided to use MongoDB as database, since it was json-based, no need of complex operations, a more "loose" approach to data (compared to ACID<sup>2</sup>), and ease of use. _This had nothing to do with NoSQL being faster than SQL<sup>3</sup>_. We had used the database on smaller projects and hadn’t experienced any issues at that time. This project was bigger. It was supposed to consume 30.000.000 items through 3 months. That was another reason why we chose MongoDB; it was document-based, it would (supposedly) not consume a lot of disk space, and it should be easy to append a new document to the database without having duplication errors.
 It was straightforward to insert items, but the CPU utilization that was used to consume all these items, which were posted by a simulator, was crazy. Nonetheless unexpected. [This picture](https://github.com/KIMB0/ufo-blog-entry/blob/master/serverHog.png) is just a short peak at the server process tree using HTOP (a utility to show running processes in Linux).
 In the beginning we didn’t knew this. At first glance when the simulator was started there were no issues on the server. It was running fine and it consumed the items rightfully. Then after consuming approximately 600-700.000 items, the server suddenly stopped responding to requests. SSH to the server was not possible and we had to do a hard restart from the Hetzner.com interface, since it is a Virtual Machine. When the server was up and running again, there were missing all previously consumed items in the database.
 We still don’t know why this happened and we were not qualified with MongoDB enough to figure it out. You can read our [Post Mortem Analysis](https://github.com/KIMB0/LSD_frontend/blob/master/Documents/Post_Mrtem_Analysis_GroupE.pdf), where we describe our server going down and what we suspected it to be.
@@ -38,9 +38,12 @@ Our advice remains: try altering some of the common settings as mentioned here, 
 We recommend users interested in MongoDB to start off slow. Take the time to read important parts of the documentation, and also hear what other users have to say. This will definitely pay off in the long run. We also recommend to take backups of the database once a day or week, depending on the amount of data being consumed. In our case, it could've saved us the lost data. Since our project has stopped, we've not implemented an automatic backup script to avoid this in the future.
 Running MongoDB out of the box is easy and quick, and might work just fine if your suspected dataset is of relatively small size, but if you have intentions to scale up, your whole application can take the hit if your MongoDB is incorrectly set up.
 
-## References
+## Footnotes
+- <sup>1</sup> https://www.mongodb.com/mongodb-3.6?jmp=homepage
+- <sup>2</sup> https://softwareengineering.stackexchange.com/a/194408/290893
+- <sup>3</sup> Read a "comparison" with [SQL vs NoSQL](https://www.sitepoint.com/sql-vs-nosql-differences/). There is no real difference, but NoSQL was better suited for our needs. The loose approach. 
 
-- https://www.mongodb.com/mongodb-3.6?jmp=homepage
+## References
 - https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html
 - https://lemire.me/blog/rules-to-write-a-good-research-paper/
 - https://docs.mongodb.com/manual/administration/analyzing-mongodb-performance/
