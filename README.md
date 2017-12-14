@@ -31,7 +31,7 @@ It lead to a great performance boost now that the server had enough CPU power to
 
 The new indexing is where we got the real results. After reindexing and restarting the MongoDB service, the average CPU usage from MongoDB went from ~99% to about ~30% instead. A screenshot can be found [here](https://github.com/KIMB0/ufo-blog-entry/blob/master/healthyMongo.png). That’s a huge decrease in processing power. The improvement could instantly be seen on our Rest API too, as the loading time on standard queries were more than halved.
 
-In conclusion, commanding MongoDB to index one of your own values can potentially improve the performance by a landslide. Restarting and repairing the service once in a while in order to let the service breathe, shouldn’t go unnoted either. These points are what worked the best for us. There are tons of settings and configurations to tweak in MongoDB, and what worked for us might not work for you. As mentioned, performance troubleshooting is one of the most difficult tasks for operators/maintainers.  
+In conclusion, commanding MongoDB to index one of your own values can potentially improve the performance by a landslide. Restarting and repairing the service, contributed by a SLA<sup>4</sup>, in order to let the service breathe, shouldn’t go unnoted either. These points are what worked the best for us. There are tons of settings and configurations to tweak in MongoDB, and what worked for us might not work for you. As mentioned, performance troubleshooting is one of the most difficult tasks for operators/maintainers.  
 For every software tool out in the world, it can make you 2x more productive, if, and only if, you understand how it works. This means; you've to dig down in the documentation and understand the care concepts of the tool. The more you know the tool, the more effective you will be in your daily worklife. MongoDB didn't made us 2x more productive, because we didn't understood the core concepts and didn't knew about tweaking the configurations of MongoDB to get it to do, what we wanted it to do. Somethings could've been avoided in our case, if we were more educated.
 
 Our advice remains: try altering some of the common settings as mentioned here, check the logs and system configurations to find potential bottlenecks to improve.
@@ -42,6 +42,7 @@ Running MongoDB out of the box is easy and quick, and might work just fine if yo
 - <sup>1</sup> https://www.mongodb.com/mongodb-3.6?jmp=homepage
 - <sup>2</sup> https://softwareengineering.stackexchange.com/a/194408/290893
 - <sup>3</sup> Read a "comparison" with [SQL vs NoSQL](https://www.sitepoint.com/sql-vs-nosql-differences/). There is no real difference, but NoSQL was better suited for our needs. The loose approach. 
+- <sup>4</sup> - Take a look at our SLA, where we mention we will make an ordinary maintenance window each month to restart the services. https://github.com/KIMB0/LSD_frontend/blob/master/Documents/SLA.md
 
 ## References
 - https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html
