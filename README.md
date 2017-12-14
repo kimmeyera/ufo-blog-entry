@@ -35,7 +35,8 @@ In conclusion, commanding MongoDB to index one of your own values can potentiall
 For every software tool out in the world, it can make you 2x more productive, if, and only if, you understand how it works. This means; you've to dig down in the documentation and understand the care concepts of the tool. The more you know the tool, the more effective you will be in your daily worklife. MongoDB didn't made us 2x more productive, because we didn't understood the core concepts and didn't knew about tweaking the configurations of MongoDB to get it to do, what we wanted it to do. Somethings could've been avoided in our case, if we were more educated.
 
 Our advice remains: try altering some of the common settings as mentioned here, check the logs and system configurations to find potential bottlenecks to improve.
-We recommend users interested in MongoDB to start off slow. Take the time to read important parts of the documentation, and also hear what other users have to say. This will definitely pay off in the long run. Running MongoDB out of the box is easy and quick, and might work just fine if your suspected dataset is of relatively small size, but if you have intentions to scale up, your whole application can take the hit if your MongoDB is incorrectly set up.
+We recommend users interested in MongoDB to start off slow. Take the time to read important parts of the documentation, and also hear what other users have to say. This will definitely pay off in the long run. We also recommend to take backups of the database once a day or week, depending on the amount of data being consumed. For our case, it could've saved us the lost of data.
+Running MongoDB out of the box is easy and quick, and might work just fine if your suspected dataset is of relatively small size, but if you have intentions to scale up, your whole application can take the hit if your MongoDB is incorrectly set up.
 
 ## References
 
