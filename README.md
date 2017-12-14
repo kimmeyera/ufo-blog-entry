@@ -2,7 +2,7 @@
 
 *by Group E (Alexander, Danny, Kim)*
 
-It is widely known that MongoDB can suffer from performance issues when it has to process too much data. This often leads to high CPU usage, memory spikes and overall degraded system performance, which leads to a poorer user experience. By analyzing the MongoDB log, modifying Mongo’s indexing and isolating and repairing the whole service, the major MongoDB performance problems can be eliminated. This results in a far more stable system environment, and will ultimately result in better response times system-wide.
+It is widely known that MongoDB can suffer from performance issues when it has to process too much data. This often leads to high CPU usage, memory spikes and overall degraded system performance, which leads to a poorer user experience. By analyzing the MongoDB log, modifying Mongo’s indexing and isolating and repairing the whole service, the major MongoDB performance problems can be eliminated. This results in a far more stable and responsive system environment
 
 ## If 100% is everything.. Then what is 200%?
 
@@ -41,8 +41,8 @@ Running MongoDB out of the box is easy and quick, and might work just fine if yo
 ## References
 
 - https://www.mongodb.com/mongodb-3.6?jmp=homepage
-- https://news.ycombinator.com/item?id=3202959
 - https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html
 - https://lemire.me/blog/rules-to-write-a-good-research-paper/
 - https://docs.mongodb.com/manual/administration/analyzing-mongodb-performance/
 - https://www.sitepoint.com/7-simple-speed-solutions-mongodb/
+- https://docs.mongodb.com/v3.4/administration/analyzing-mongodb-performance/
